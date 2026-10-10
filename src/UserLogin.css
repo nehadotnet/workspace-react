@@ -1,0 +1,114 @@
+.user-login-card {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 850px;
+    max-width: 95%;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.user-login-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.user-login-left img {
+    width: 100%;
+    max-width: 300px;
+    object-fit: contain;
+}
+
+.user-login-right {
+    flex: 1;
+    text-align: center;
+}
+
+.user-login-right h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333333;
+}
+
+/* Employee / Retailor tabs */
+.tabs {
+    display: flex;
+    background-color: #f1f3f6;
+    border-radius: 25px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background: transparent;
+    color: #6b7280;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.tab.active {
+    background-color: #ffffff;
+    color: #333333;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.user-login-right input[type="text"],
+.user-login-right input[type="password"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    margin-bottom: 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+}
+
+.user-login-right input:focus {
+    border-color: #2563eb;
+}
+
+.options-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #333333;
+}
+
+.options-row a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #1d4ed8;
+}
+
+.submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}

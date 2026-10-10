@@ -1,14 +1,16 @@
 
 import { useState } from 'react'
-import './Login.css'
+import '../Login.css'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import validateCompanyCode from './services/authService';
+import validateCompanyCode from '../services/authService';
+import { useNavigate } from 'react-router'
 
 function Login() {
 
     const [companyCode, setCompanyCode] = useState('');
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
 
     const handleLogin = async () => {
@@ -22,10 +24,13 @@ function Login() {
         try {
             const response = await validateCompanyCode(companyCode.trim())
 
-            if (response.Status === 3) {
+            if (response.Status !== 1) {
                 toast.error(response.Message)
                 return;
             }
+
+            sessionStorage.setItem('companyData', JSON.stringify(response.CompanyDetails[0]));
+            navigate('/user-login')
         } catch (error) {
             toast.error(error.Message);
 
