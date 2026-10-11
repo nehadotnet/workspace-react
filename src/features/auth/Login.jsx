@@ -3,7 +3,7 @@ import { useState } from 'react'
 import './Login.css'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import validateCompanyCode from '../../services/authService';
+import validateCompanyCode from '../../services/auth/authService';
 import { useNavigate } from 'react-router'
 
 function Login() {

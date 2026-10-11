@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import userLogin from "../../services/userService";
+import userLogin from "../../services/auth/userService";
 import { useNavigate } from 'react-router'
 import './UserLogin.css'
 
@@ -27,7 +27,7 @@ function UserLogin() {
             toast.warning('Please enter username and password');
             return;
         }
-        // setLoading(true);
+        setLoading(true);
         try {
 
             const payload = {
