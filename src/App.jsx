@@ -1,9 +1,10 @@
 
 import './App.css'
-import Login from './components/Login'
+import Login from "./features/auth/Login";
+
 import { Route, Routes } from 'react-router'
-import UserLogin from './components/UserLogin'
-import Dashboard from './components/Dashboard'
+import UserLogin from "./features/auth/UserLogin"
+import Dashboard from './features/dashboard/Dashboard'
 
 function App() {
 
@@ -12,7 +13,7 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={<Login />} />
-        <Route path='/user-login' element={<UserLogin />} />
+        <Route path='/auth/user-login' element={<UserLogin />} />
         <Route path='/dashboard' element={<Dashboard />} />
       </Routes>
     </>

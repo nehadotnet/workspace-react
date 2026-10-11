@@ -1,4 +1,4 @@
-import UserLogin from "../components/UserLogin";
+import UserLogin from "../features/auth/UserLogin";
 import API_BASE_URL from "./api"
 
 const userLogin = async ({ username, password, userType, companyId }) => {

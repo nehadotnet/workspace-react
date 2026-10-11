@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import userLogin from "../services/userService";
+import userLogin from "../../services/userService";
 import { useNavigate } from 'react-router'
-import '../UserLogin.css'
+import './UserLogin.css'
 
 function UserLogin() {
 

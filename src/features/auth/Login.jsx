@@ -1,9 +1,9 @@
 
 import { useState } from 'react'
-import '../Login.css'
+import './Login.css'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import validateCompanyCode from '../services/authService';
+import validateCompanyCode from '../../services/authService';
 import { useNavigate } from 'react-router'
 
 function Login() {
@@ -30,7 +30,7 @@ function Login() {
             }
 
             sessionStorage.setItem('companyData', JSON.stringify(response.CompanyDetails[0]));
-            navigate('/user-login')
+            navigate('/auth/user-login')
         } catch (error) {
             toast.error(error.Message);
 
