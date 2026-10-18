@@ -1,0 +1,41 @@
+.count-card {
+    position: relative;
+    width: 140px;
+    padding: 20px 24px;
+    background: #fff;
+    border-radius: 12px;
+    border-left: 6px solid var(--card-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* small colored corner at top-right */
+.count-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    background: var(--card-color);
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 22px;
+}
+
+.count-card.active {
+    background: #eef4ff;
+}
+
+.count-card-label {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.count-card-number {
+    margin: 8px 0 0;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--card-color);
+}

@@ -1,0 +1,69 @@
+.ticket-table-wrapper {
+    margin-top: 24px;
+    overflow-x: auto;
+    border-radius: 12px;
+}
+
+.ticket-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1000px;
+}
+
+.ticket-table th {
+    background: #13294b;
+    color: #fff;
+    text-align: left;
+    padding: 14px 16px;
+    white-space: nowrap;
+}
+
+.ticket-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.ticket-link {
+    color: #2563eb;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.no-data {
+    text-align: center;
+    color: #6b7280;
+    padding: 40px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 2px 14px;
+    border-radius: 999px;
+    border: 1px solid;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.badge-red {
+    color: #dc2626;
+    border-color: #dc2626;
+    background: #fef2f2;
+}
+
+.badge-green {
+    color: #16a34a;
+    border-color: #16a34a;
+    background: #f0fdf4;
+}
+
+.badge-blue {
+    color: #2563eb;
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.badge-grey {
+    color: #6b7280;
+    border-color: #9ca3af;
+    background: #f3f4f6;
+}

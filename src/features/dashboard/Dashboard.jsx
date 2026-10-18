@@ -1,17 +1,25 @@
 import Navbar from "./Navbar"
 import './Dashboard.css'
-import Header from "./Header";
+import { Outlet } from "react-router";
+import { useState } from "react";
 
 
 function Dashboard() {
+
+    const [collapsed, setCollapsed] = useState(false);
+
     return (
         <>
             <div className="dashboard">
-                <Navbar />
+                <div className="sidebar-wrapper">
+                    <Navbar collapsed={collapsed} />
+                    <button className="toggle-btn" onClick={() => setCollapsed(!collapsed)}>
+                        {collapsed ? '>' : '<'}
+                    </button>
+                </div>
                 <div className='dashboard-main'>
-                    <Header />
                     <div className='dashboard-content'>
-                        <p>Page content will come here</p>
+                        <Outlet />
                     </div>
                 </div>
             </div>

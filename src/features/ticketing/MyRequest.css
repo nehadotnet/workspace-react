@@ -1,0 +1,43 @@
+.count-card-wrapper {
+    position: relative;
+    /* arrows are positioned inside this */
+}
+
+.count-card-row {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 4px;
+    scrollbar-width: none;
+    /* hide scrollbar (Firefox) */
+}
+
+.count-card-row::-webkit-scrollbar {
+    display: none;
+    /* hide scrollbar (Chrome, Edge) */
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* centers vertically */
+    z-index: 1;
+    /* sits on top of the cards */
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.scroll-btn.left {
+    left: -10px;
+}
+
+.scroll-btn.right {
+    right: -10px;
+}

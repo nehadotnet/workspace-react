@@ -1,9 +1,9 @@
 
 import { useState } from 'react';
 import './Dashboard.css'
-import { useNavigate } from 'react-router'
+import { NavLink, useNavigate } from 'react-router'
 
-function Navbar() {
+function Navbar({ collapsed }) {
 
     const [openId, setOpenId] = useState(null)
 
@@ -23,7 +23,7 @@ function Navbar() {
 
     return (
         <>
-            <div className='sidebar'>
+            <div className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
                 <div className='sidebar-top'>
                     <div className='sidebar-logo'>F SUITE</div>
 
@@ -40,9 +40,22 @@ function Navbar() {
                                     <div className='submenu'>
                                         {
                                             item.Sub_Modules.map((submodules) => (
-                                                <div key={submodules.MenuID} className='submenu-item'>
-                                                    {submodules.Menu}
-                                                </div>
+                                                submodules.MenuID === 3 ? (
+                                                    <div key={submodules.MenuID}>
+                                                        <NavLink to='/ticketing/my-request' className={({ isActive }) => isActive ? 'submenu-item active' : 'submenu-item'}>
+                                                            My Request
+                                                        </NavLink>
+                                                        <NavLink to='/ticketing/my-action' className={({ isActive }) => isActive ? 'submenu-item active' : 'submenu-item'}>
+                                                            My Action
+                                                        </NavLink>
+
+                                                    </div>
+
+                                                ) : (
+                                                    < div key={submodules.MenuID} className='submenu-item' >
+                                                        {submodules.Menu}
+                                                    </div>
+                                                )
 
                                             ))
                                         }
@@ -64,7 +77,7 @@ function Navbar() {
                     <button className='logout-btn' onClick={handleLogout}>Logout</button>
                 </div>
 
-            </div>
+            </div >
         </>
     );
 }

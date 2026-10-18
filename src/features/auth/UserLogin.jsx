@@ -52,7 +52,7 @@ function UserLogin() {
             const storage = remeber ? localStorage : sessionStorage;
             storage.setItem('token', token);
             storage.setItem('loginDetails', JSON.stringify(loginDetails));
-            navigate('/dashboard', { replace: true })
+            navigate('/ticketing/my-request', { replace: true })
         } catch (error) {
             // toast.error(error.Message)
         } finally {
