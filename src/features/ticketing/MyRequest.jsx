@@ -5,6 +5,7 @@ import fetchMyRequest from "../../services/ticketing/ticketingService";
 import CountCard from "./CountCard";
 import "./MyRequest.css";
 import TicketTable from "./TicketTable";
+import Pagination from "./Pagination";
 
 const CARD_CONFIG = [
     { key: "total", label: "All", color: "#2563eb", status: "" },
@@ -23,6 +24,7 @@ function MyRequest() {
     const [response, setResponse] = useState(null);
     const [loading, setLoading] = useState(false);
     const [activeCard, setActiveCard] = useState("total");
+    const [pageCount, setPageCount] = useState(1);
 
 
 
@@ -59,6 +61,7 @@ function MyRequest() {
                     fromDate: "01/01/2026",
                     toDate: "16/10/2026",
                     actionStatus: selected.status,
+                    pageCount: pageCount,
 
                 });
 
@@ -75,7 +78,7 @@ function MyRequest() {
         }
 
         load();
-    }, [activeCard])
+    }, [activeCard, pageCount])
 
 
     return (
@@ -91,7 +94,10 @@ function MyRequest() {
                                 count={response?.counts[card.key] ?? 0}
                                 color={card.color}
                                 isActive={activeCard === card.key}
-                                onClick={() => setActiveCard(card.key)}
+                                onClick={() => {
+                                    setActiveCard(card.key);
+                                    setPageCount(1);
+                                }}
                             />
                         ))
 
@@ -104,6 +110,12 @@ function MyRequest() {
             </div>
 
             {loading ? <p>Loading...</p> : <TicketTable tickets={response?.tickets ?? []} />}
+            <Pagination
+                page={pageCount}
+                totalPages={response?.totalPages ?? 0}
+                totalRecords={response?.totalRecords ?? 0}
+                onPageChange={setPageCount}
+            />
         </>
     )
 }
